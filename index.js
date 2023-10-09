@@ -94,7 +94,7 @@ app.use(cors(corsOption));
 app.use("/", routes());
 
 // Puerto
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 const host = process.env.HOST || "0.0.0.0";
 
 //*Iniciar APP
