@@ -53,7 +53,7 @@ console.log("INICIANDO LA APP");
 //ARCHIVOS EN AWS
 app.get("/uploads/:fileKey", (req, res) => {
   const { fileKey } = req.params;
-  const s3BaseUrl = "https://files-aws-cvcl.s3.sa-east-1.amazonaws.com";
+  const s3BaseUrl = process.env.AWS_IMAGES_URL;
   const fileUrl = `${s3BaseUrl}/uploads/${fileKey}`;
 
   // Redirige al archivo en S3
