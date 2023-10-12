@@ -41,10 +41,11 @@ exports.autenticarUsuario = async (req, res, next) => {
           _id: usuario._id,
         },
         "LLAVESECRETA",
-        { expiresIn: "1h" }
+        { expiresIn: "100h" }
       );
       //retornar el TOKEN
       res.json({ token });
+      // console.log("el token es: ", token);
     }
   }
 };

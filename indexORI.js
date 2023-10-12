@@ -26,25 +26,18 @@ mongoose
 
 // Crear el servidor
 const app = express();
-// app.use(
-//   cors({
-//     origin: [
-//       "http://localhost:3000",
-//       "https://pedidos-admin.netlify.app",
-//       "http://localhost:3000/iniciar-sesion",
-//       "https://pedidos-admin.netlify.app/iniciar-sesion",
-//     ],
-//   })
-// );
-const allowedOrigins = process.env.ALLOWED_ORIGINS.split(",");
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://pedidos-admin.netlify.app",
+      "http://localhost:3000/iniciar-sesion",
+      "https://pedidos-admin.netlify.app/iniciar-sesion",
+    ],
+  })
+);
 
-const corsOptions = {
-  origin: allowedOrigins,
-};
-
-app.use(cors(corsOptions));
-
-console.log("INICIANDO LA APP");
+console.log("INICIANDO LA APP CORS PERMITIDOS");
 //Carpeta pública
 // app.use(express.static("uploads")); //ORIGINAL
 // Ruta para servir archivos estáticos desde la carpeta "uploads"
@@ -88,7 +81,7 @@ const whitelist = [
   "http://localhost:3000",
 ];
 console.log("process.env.FRONTEND_URL?", process.env.FRONTEND_URL);
-// console.log("process.env.DATA_BASE?", process.env.DATA_BASE);
+console.log("process.env.DATA_BASE?", process.env.DATA_BASE);
 let repeated = false;
 
 // const corsOption = {
