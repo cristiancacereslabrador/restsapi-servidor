@@ -30,10 +30,8 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://pedidos-admin.netlify.app",
-      "http://localhost:3000/iniciar-sesion",
-      "https://pedidos-admin.netlify.app/iniciar-sesion",
-      "https://master.d2oi85gvkqifl5.amplifyapp.com",
+      process.env.FRONTEND_URL,
+      process.env.FRONTEND_URL_AWS,
     ],
   })
 );
