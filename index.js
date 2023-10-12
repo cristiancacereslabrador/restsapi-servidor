@@ -26,23 +26,26 @@ mongoose
 
 // Crear el servidor
 const app = express();
-// app.use(
-//   cors({
-//     origin: [
-//       "http://localhost:3000",
-//       "https://pedidos-admin.netlify.app",
-//       "http://localhost:3000/iniciar-sesion",
-//       "https://pedidos-admin.netlify.app/iniciar-sesion",
-//     ],
-//   })
-// );
-const allowedOrigins = process.env.ALLOWED_ORIGINS.split(",");
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://pedidos-admin.netlify.app",
+      "http://localhost:3000/iniciar-sesion",
+      "https://pedidos-admin.netlify.app/iniciar-sesion",
+      "https://master.d2oi85gvkqifl5.amplifyapp.com",
+    ],
+  })
+);
+// const allowedOrigins = process.env.ALLOWED_ORIGINS.split(",");
+// // const allowedOrigins = process.env.ALLOWED_ORIGINS;
+// // console.log("allowedOrigins", allowedOrigins);
 
-const corsOptions = {
-  origin: allowedOrigins,
-};
+// // const corsOptions = {
+// //   origin: allowedOrigins,
+// // };
 
-app.use(cors(corsOptions));
+// // app.use(cors(corsOptions));
 
 console.log("INICIANDO LA APP");
 //Carpeta pública
